@@ -3,10 +3,22 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --main-color: #fd8829;
+    --secondary-color: #fff;
+    --background-color: rgba(10, 10, 9, 0.8);
+    --font-size-small: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 16px;
+    --font-size-xlarge: 18px;
+    --font-size-xxlarge: 24px;
+    --font-size-xxxlarge: 36px;
+}
 
 body {
     background-image: url(images/фон.jpg);
     background-size: cover;
+    font-family: 'Roboto', sans-serif; 
 }
 
 .container {
@@ -15,8 +27,8 @@ body {
 }
 
 .header {
-    background-color: rgba(10, 10, 9, 0.8);
-    color: #fff;
+    background-color: var(--background-color); 
+    color: var(--secondary-color); 
     padding: 20px;
     text-align: center;
     border-bottom: 1px solid #ccc;
@@ -24,7 +36,7 @@ body {
 }
 
 .header h1 {
-    font-size: 36px;
+    font-size: var(--font-size-xxxlarge);
 }
 
 .main {
@@ -34,7 +46,11 @@ body {
     padding: 20px;
     margin-bottom: 60px;
     grid-auto-flow: row;
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
 }
+}
+
 
 .card {
     width: 100%;
@@ -61,18 +77,18 @@ body {
 }
 
 .card-content h2 {
-    font-size: 24px;
+    font-size: var(--font-size-xxlarge);
     text-align: center; 
 }
 
 .card-content p {
-    font-size: 16px;
+    font-size: var(--font-size-large);
 }
 
 .card-link {
     display: block;
     text-align: center;
-    color: #fd8829; 
+    color: var(--main-color); 
     text-decoration: none;
 
 }
@@ -81,8 +97,8 @@ body {
     text-decoration: underline;
 }
 .footer {
-    background-color: rgba(10, 10, 9, 0.8);
-    color: #fff;
+    background-color: var(--background-color); 
+    color: var(--secondary-color); 
     padding: 40px;
     border-top: 1px solid #ccc;
     border-radius: 5px;
@@ -91,16 +107,21 @@ body {
 .footer.element-show {
     opacity: 1;
     transition: opacity 1s;
-  }
+}
 
 .footer-info,
 .footer-links,
 .footer-social {
     display: inline-block;
-    width: 30%;
+    width: 20%;
     vertical-align: top;
 }
-
+.footer-links {
+    margin-left: 300px;
+}
+.footer-social {
+    margin-left: 80px;
+}
 .footer-info h3,
 .footer-links h3,
 .footer-social h3 {
@@ -114,10 +135,12 @@ body {
 
 .footer-links ul {
     list-style: none;
+    
 }
 
 .footer-links li {
     margin-bottom: 5px;
+    
 }
 
 .footer-links a {
@@ -150,5 +173,5 @@ body {
 
 .footer-copy {
     font-size: 12px;
-    text-align: center;
+    text-align:center;
 }
